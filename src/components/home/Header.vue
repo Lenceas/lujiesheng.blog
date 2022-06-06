@@ -37,16 +37,14 @@
                     <div class="search_box">
                         <div class="go-left"></div>
                         <div class="search">
-                            <form action="" method="post" name="searchform" id="searchform">
-                                <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字词"
-                                    style="color: rgb(153, 153, 153);"
-                                    onfocus="if(value=='请输入关键字词'){this.style.color='#000';value=''}"
-                                    onblur="if(value==''){this.style.color='#999';value='请输入关键字词'}" type="text">
-                                <input name="show" value="title" type="hidden">
-                                <input name="tempid" value="1" type="hidden">
-                                <input name="tbname" value="news" type="hidden">
-                                <input name="Submit" class="input_submit" value="搜索" type="submit">
-                            </form>
+                            <input name="keyboard" id="keyboard" class="input_text" value="请输入关键字词"
+                                style="color: rgb(153, 153, 153);"
+                                onfocus="if(value=='请输入关键字词'){this.style.color='#000';value=''}"
+                                onblur="if(value==''){this.style.color='#999';value='请输入关键字词'}" type="text">
+                            <input name="show" value="title" type="hidden">
+                            <input name="tempid" value="1" type="hidden">
+                            <input name="tbname" value="news" type="hidden">
+                            <input name="Submit" class="input_submit" value="搜索" type="submit" @click="search">
                         </div>
                     </div>
                 </div>
@@ -62,7 +60,11 @@ import '@js/comm.js'
 </script>
 
 <script setup>
-
+import $util from '../../api/util'
+const search = () => {
+    $util.msg_warning('搜索功能尚未开放！')
+    $util.notify_warning('消息通知', '搜索功能尚未开放！')
+}
 </script>
 
 <style scoped>
